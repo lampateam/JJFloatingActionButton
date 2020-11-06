@@ -152,6 +152,10 @@ import UIKit
     /// - SeeAlso: `itemAnimationConfiguration`
     ///
     public var buttonAnimationConfiguration: JJButtonAnimationConfiguration = .rotation()
+    
+    /// The opening style of the floating action button with rotation itself.
+    /// Default is `JJButtonAnimationConfiguration.JJButtonAnimationRotationStyle = .semicircle`
+    public var buttonAnimationRotationStyle: JJButtonAnimationConfiguration.JJButtonAnimationRotationStyle = .semicircle
 
     /// The opening style of the action items.
     /// Default is `JJItemAnimationConfiguration.popUp()`

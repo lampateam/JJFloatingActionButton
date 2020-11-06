@@ -102,6 +102,18 @@ import UIKit
         ///
         case transition
     }
+    
+    /// Rotation animation style
+    ///
+    @objc public enum JJButtonAnimationRotationStyle: Int {
+        /// Rotate button image to given angle.
+        ///
+        case quartercircle
+
+        /// Transition to given image.
+        ///
+        case semicircle
+    }
 
     /// Button animation style
     /// Possible values:
@@ -465,7 +477,8 @@ internal extension JJItemAnimationConfiguration {
         precondition(index >= 0)
         precondition(index < numberOfItems)
 
-        let startAngle: CGFloat = actionButton.isOnLeftSideOfScreen ? 2 * .pi : .pi
+        
+        let startAngle: CGFloat = actionButton.isOnLeftSideOfScreen ? 2 * .pi : actionButton.buttonAnimationRotationStyle == .semicircle ? .pi * 0.5 : .pi
         let endAngle: CGFloat = 1.5 * .pi
 
         switch (numberOfItems, index) {
